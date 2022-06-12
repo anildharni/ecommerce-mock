@@ -1,0 +1,11 @@
+.container {
+    display: grid;
+    grid-template-columns: 60% 40%;
+    background-color:cadetblue;
+    border-radius: 4px;
+}
+
+.grid-item {
+    display: grid;
+    grid-template-columns: repeat(4, 25%);
+}

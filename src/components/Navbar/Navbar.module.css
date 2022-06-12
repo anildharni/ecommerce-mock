@@ -1,0 +1,7 @@
+.container {
+    display: grid;
+    grid-template-columns: 35% 55% 5% 5%;
+    grid-template-rows: 10% 90%;
+    background-color: antiquewhite;
+    padding: 15px;
+}

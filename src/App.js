@@ -1,24 +1,26 @@
-import logo from './logo.svg';
-import './App.css';
+import HomePage from "./pages/HomePage/HomePage";
+import React from "react";
+import { Routes,Route } from "react-router-dom";
+import Profile from "./pages/Profile/Profile";
+import Cart from "./pages/Cart/Cart";
+import Category from "./pages/Products/Category/Category";
+import Product from "./pages/Products/Product/Product";
+import classes from "./index.module.css";
+
 
 function App() {
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <HomePage />
+      <Routes>
+        <Route path="/" element={<h1 className={classes.container}>Welcome to ZeroZilla</h1>}/>
+        <Route path="profile" element={<Profile />} />
+        <Route path="cart" element={<Cart />} />
+        <Route path=':category' element={<Category />} />
+        <Route path='products/:prodID' element={<Product />} />
+      </Routes>
+    </>
   );
 }
 
