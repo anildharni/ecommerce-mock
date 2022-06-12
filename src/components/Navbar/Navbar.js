@@ -3,8 +3,8 @@ import { GiClothes, GiEgyptianProfile, GiShoppingCart } from 'react-icons/gi';
 import { Link } from 'react-router-dom'
 import SearchBar from '../SearchBar/SearchBar';
 
-function Navbar() {
-    
+function Navbar(props) {
+
     return (
         <div className={classes.container}>
             <span>
@@ -14,6 +14,7 @@ function Navbar() {
             <span>
                 <Link to={`/cart`}>
                     <GiShoppingCart size={30} color={`black`} />
+                    {props.cartCount}
                 </Link>
             </span>
             <span>

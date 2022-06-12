@@ -1,14 +1,13 @@
-import { useContext } from 'react';
+import { useContext, useState } from 'react';
 import StoreContext from '../../store/StoreContext';
 import classes from './Card.module.css'
 
 const Card = (props) => {
 
     const ctx = useContext(StoreContext);
-    console.log(ctx)
 
     return (
-        <div onClick={props.id ? () => props.clickHandler(props.id) : () => { }} className={props.expand ? classes["card-body"] : classes.card}>
+        <div onClick={props.id ? () => props.clickHandler(props.id) : () => {}} className={props.expand ? classes["card-body"] : classes.card}>
             <div className={props.expand ? classes["card-body__image-body"] : classes["card__image"]}>
                 <img src={props.image} alt="dummy placeholder" />
             </div>
@@ -26,9 +25,16 @@ const Card = (props) => {
                 <p>
                     {props.description}
                 </p>
-                {props.buy ? <button>
-                    Add to Cart
-                </button> : ""}
+                <h3>
+                    {props.buy ? "" : "Click to read more"}
+                </h3>
+                {props.buy
+                    ? <button onClick={() => ctx.cartHandler(props.index)}>
+                        {Array.from(ctx.cartItems).includes(props.index)
+                            ? "Remove from Cart"
+                            : "Add to Cart"}
+                    </button>
+                    : ""}
             </div>
         </div>
     );

@@ -14,6 +14,19 @@ export const StoreContextProvider = (props) => {
     const [data, setData] = useState([]);
     const [categoryData, setCategoryData] = useState([]);
 
+    const [cartCount, setCartCount] = useState(0);
+    const [cartItems, setCartItems] = useState([]);
+
+    const cartHandler = (id) => {
+        if (Array.from(cartItems).includes(id)) {
+            setCartCount(cartCount - 1)
+            return setCartItems((prevState) => (prevState.filter((el) => el !== id)))
+        } else {
+            setCartCount(cartCount + 1)
+            return setCartItems(prevState => [...prevState, id])
+        }
+    }
+
     const navigate = useNavigate();
 
     const expandHandler = (id) => {
@@ -51,6 +64,9 @@ export const StoreContextProvider = (props) => {
         filteredData: filteredData,
         wordEntered: wordEntered,
         categoryData: categoryData,
+        cartCount:cartCount,
+        cartItems:cartItems,
+        cartHandler:cartHandler,
         setCategoryData: setCategoryData,
         setFilteredData: setFilteredData,
         setWordEntered: setWordEntered,

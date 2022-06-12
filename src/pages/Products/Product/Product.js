@@ -28,13 +28,13 @@ const Category = () => {
             .then(res => setProdData(res))
     }, [url])
 
-    // console.log(prodData)
 
 
     return (
         <div className={classes.item}>
             <Card
                 key={prodData.id}
+                index={prodData.id}
                 expand={true}
                 image={prodData.image}
                 title={prodData.title}
