@@ -5,14 +5,16 @@ import ProductCatg from '../ProductCatg/ProductCatg'
 import { CategoryContextProvider } from '../../store/CategoryContext'
 import StoreContext from '../../store/StoreContext'
 
+// This component represent home page with both Navbar and categories list below that Navbar 
+
 function HomePage() {
     const ctx = useContext(StoreContext);
 
     return (
         <div className={classes.homepage}>
-            <Navbar cartCount = {ctx.cartCount}/>
+            <Navbar cartCount = {ctx.cartCount}/>      {/* Paased the number of items added in cart beside cart icon */}
             <CategoryContextProvider>
-                <ProductCatg />
+                <ProductCatg />            {/* Wrapping the ProductCategories with a local context */}
             </CategoryContextProvider>
         </div>
     )

@@ -3,6 +3,8 @@ import ListItem from '../../components/ListItem/ListItem'
 import CategoryContext from '../../store/CategoryContext'
 import classes from './ProductCatg.module.css'
 
+// This component will supply Category elements in our NavBar
+
 function ProductCatg() {
     const ctx = useContext(CategoryContext);
 
@@ -10,7 +12,7 @@ function ProductCatg() {
         <div className={classes.container}>
             <span className={classes['grid-item']}>
                 <button>
-                    categories
+                    categories      {/* This button is just for convenience purpose */}
                 </button>
             </span>
             <div className={classes['grid-item']}>

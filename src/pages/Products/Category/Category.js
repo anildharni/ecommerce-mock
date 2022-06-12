@@ -8,6 +8,8 @@ const Category = () => {
 
   const ctx = useContext(StoreContext);
 
+  // useParams hook will let us access current url parameters. Earlier we used to use match params
+
   const { category } = useParams();
 
   const url = `https://fakestoreapi.com/products/category/${category}`
@@ -32,7 +34,7 @@ const Category = () => {
           id={el.id}
           expanded={false}
           image={el.image}
-          title={el.title}
+          title={el.title}                    // Using Card component to populate all the products in a particular component
           category={el.category}
           description={el.description}
           rating={el.rating}

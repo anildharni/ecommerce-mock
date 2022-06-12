@@ -8,8 +8,14 @@ function Navbar(props) {
     return (
         <div className={classes.container}>
             <span>
-                <GiClothes size={30} color={`grey`} />
+                <Link to={`/`}>
+                    <GiClothes size={30} color={`grey`} />
+                </Link>
             </span>
+
+            {/* Created a custom search component which takes placeholder as props. Searchbar gets data 
+            through Context while filter - You can find that data filter, fetching and other details in Component */}
+
             <SearchBar placeholder="Search for a product..." />
             <span>
                 <Link to={`/cart`}>

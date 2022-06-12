@@ -7,6 +7,9 @@ import { StoreContextProvider } from './store/StoreContext';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
+
+  // Wrapping StoreContextProvider around our App component for State Management
+
   <Router>
     <StoreContextProvider>
       <React.StrictMode>

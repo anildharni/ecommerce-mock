@@ -1,13 +1,16 @@
 import { createContext, useState, useEffect } from "react";
 
-const CategoryContext = createContext({
-});
+// Category context is made to wrap only ProductCatg component in HomePage component. So as to scope the context.
+
+const CategoryContext = createContext();
 
 export const CategoryContextProvider = (props) => {
 
     const [cat, setCat] = useState(() => {
         try {
-            const catLocalArray = window.localStorage.getItem('categoryArray');
+            // To reduce the number of calls made to APIs, this initial category array will be stored to 
+            // client's local storage.
+            const catLocalArray = window.localStorage.getItem('categoryArray'); 
             return catLocalArray ? JSON.parse(catLocalArray) : []
         } catch (error) {
             console.log(error);
