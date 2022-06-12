@@ -35,6 +35,7 @@ const Category = () => {
             <Card
                 key={prodData.id}
                 index={prodData.id}
+                prodData={prodData}
                 expand={true}
                 image={prodData.image}
                 title={prodData.title}
@@ -42,7 +43,8 @@ const Category = () => {
                 description={prodData.description}
                 rating={prodData.rating}
                 price={prodData.price}
-                buy={true} />
+                buy={true}
+            />
         </div>
     )
 }

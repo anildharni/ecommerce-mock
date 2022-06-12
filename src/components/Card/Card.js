@@ -5,6 +5,7 @@ import classes from './Card.module.css'
 const Card = (props) => {
 
     const ctx = useContext(StoreContext);
+    console.log(ctx.cartData.cartItems)
 
     return (
         <div onClick={props.id ? () => props.clickHandler(props.id) : () => {}} className={props.expand ? classes["card-body"] : classes.card}>
