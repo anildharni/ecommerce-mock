@@ -9,3 +9,19 @@
     display: grid;
     grid-template-columns: repeat(4, 25%);
 }
+
+.grid-item-category {
+    display: grid;
+    grid-template-columns: repeat(4, 25%);
+}
+
+@media (max-width:500px) {
+    .grid-item-category {
+        display: none;
+    }
+
+    .container {
+        grid-template-columns: 100%;
+       
+    }
+}

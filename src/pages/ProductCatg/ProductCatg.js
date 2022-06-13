@@ -10,7 +10,7 @@ function ProductCatg() {
 
     return (
         <div className={classes.container}>
-            <span className={classes['grid-item']}>
+            <span className={classes['grid-item-category']}>
                 <button>
                     categories      {/* This button is just for convenience purpose */}
                 </button>
